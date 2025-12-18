@@ -9,6 +9,9 @@ const {
   isDefined,
   defined,
 } = require("./modules/is");
+const {
+    hasAlpha,
+} = require("./modules/has");
 
 // Tests
 const testValues = [
@@ -137,3 +140,5 @@ console.log("Avec null:", functionExists(null)); // false
 console.log(isAlpha("éèê")); // true
 console.log(isAlpha("Привет")); // true
 console.log(isAlpha("123")); // false
+console.log(hasAlpha("éèê"));
+
