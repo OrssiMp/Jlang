@@ -1,0 +1,21 @@
+{
+  "name": "jlang",
+  "version": "1.0.0",
+  "description": "jlang - A modern JavaScript utility library inspired by PHP, providing handy functions like isset(), isArray(), and other missing utilities in native JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OrssiMp/Jlang.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/OrssiMp/Jlang/issues"
+  },
+  "homepage": "https://github.com/OrssiMp/Jlang#readme"
+}

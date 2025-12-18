@@ -8,6 +8,7 @@ const {
   isset,
   isDefined,
   defined,
+  isJson
 } = require("./modules/is");
 
 // Tests
@@ -137,3 +138,14 @@ console.log("Avec null:", functionExists(null)); // false
 console.log(isAlpha("éèê")); // true
 console.log(isAlpha("Привет")); // true
 console.log(isAlpha("123")); // false
+
+// Tests pour isJson
+console.log("\n=== Tests pour isJson ===");
+console.log("JSON valide (objet):", isJson('{"name":"John", "age":30}'));  // true
+console.log("JSON valide (tableau):", isJson('[1, 2, 3]'));               // true
+console.log("JSON valide (chaîne):", isJson('"simple string"'));          // true
+console.log("JSON invalide (chaîne simple):", isJson('not json'));        // false
+console.log("JSON invalide (accolade manquante):", isJson('{"name":"John"')); // false
+console.log("Chaîne vide:", isJson(''));                                  // false
+console.log("null:", isJson(null));                                      // false
+console.log("Objet JavaScript:", isJson({name: "John"}));                // false (doit être une chaîne)
