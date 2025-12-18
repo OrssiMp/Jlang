@@ -6,6 +6,7 @@ const defined = require("../utils/is/defined");
 const alpha = require("../utils/is/alpha");
 const isFunction = require("../utils/is/function");
 const functionExists = require("../utils/is/functionExists");
+const isJson = require("../utils/is/json");
 
 // Fonction utilitaire pour créer les noms en PascalCase
 const toPascalCase = (str) => str.charAt(0).toUpperCase() + str.slice(1);
@@ -39,7 +40,11 @@ module.exports = {
     function: isFunction,
     isFunction,
     functionExists,
-    isFunctionExists: functionExists
+    isFunctionExists: functionExists,
+    
+    // Fonctions JSON
+    json: isJson,
+    isJson
 };
 
 // Ajouter les versions avec préfixe 'is' uniquement si elles n'existent pas déjà
