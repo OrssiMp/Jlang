@@ -7,9 +7,10 @@ const alpha = require("./utils/is/alpha");
 const isFunction = require("./utils/is/function");
 const functionExists = require("./utils/is/functionExists");
 const isJson = require("./utils/is/json");
+const toPascalCase = require("./toPascalCase");
 
 // Fonction utilitaire pour créer les noms en PascalCase
-const toPascalCase = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+
 
 // Exporter les fonctions avec des noms clairs
 module.exports = {
