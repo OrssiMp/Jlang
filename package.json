@@ -1,7 +1,7 @@
 {
   "name": "jlang",
   "version": "1.0.0",
-  "description": "jlang - A modern JavaScript utility library inspired by PHP, providing handy functions like isset(), isArray(), and other missing utilities in native JavaScript.",
+  "description": "jlang - A modern JavaScript utility library inspired by PHP, Python, providing handy functions like isset(), isArray(), and other missing utilities in native JavaScript.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

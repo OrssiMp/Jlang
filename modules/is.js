@@ -1,12 +1,12 @@
-const array = require("../utils/is/array");
-const empty = require("../utils/is/empty");
-const object = require("../utils/is/object");
-const isset = require("../utils/is/isset");
-const defined = require("../utils/is/defined");
-const alpha = require("../utils/is/alpha");
-const isFunction = require("../utils/is/function");
-const functionExists = require("../utils/is/functionExists");
-const isJson = require("../utils/is/json");
+const array = require("./utils/is/array");
+const empty = require("./utils/is/empty");
+const object = require("./utils/is/object");
+const isset = require("./utils/is/isset");
+const defined = require("./utils/is/defined");
+const alpha = require("./utils/is/alpha");
+const isFunction = require("./utils/is/function");
+const functionExists = require("./utils/is/functionExists");
+const isJson = require("./utils/is/json");
 
 // Fonction utilitaire pour créer les noms en PascalCase
 const toPascalCase = (str) => str.charAt(0).toUpperCase() + str.slice(1);

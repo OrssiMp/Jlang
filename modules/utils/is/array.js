@@ -17,4 +17,5 @@ module.exports = function isArray(value, allowEmpty = true) {
         return false;
     }
     return allowEmpty ? true : value.length > 0;
+    
 };
