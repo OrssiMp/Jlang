@@ -1,13 +1,17 @@
 /**
- * Vérifie si une valeur est définie (n'est pas undefined)
- * @param {*} value - La valeur à vérifier
- * @returns {boolean} true si la valeur est définie (même null), false si undefined
+ * Check if a value is defined (not undefined)
+ * 
+ * @function isDefined
+ * @param {*} value - The value to check
+ * @returns {boolean} true if the value is defined (even null), false if undefined
+ * 
  * @example
  * isDefined(undefined)  // false
  * isDefined(null)       // true
  * isDefined(0)          // true
  * isDefined('')         // true
  * isDefined(false)      // true
+ * isDefined({})         // true
  */
 function isDefined(value) {
     return value !== undefined;

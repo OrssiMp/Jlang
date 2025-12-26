@@ -1,20 +1,35 @@
-// Importer tous les modules
+/**
+ * jlang - JavaScript Utility Library
+ * A modern JavaScript utility library inspired by PHP and Python
+ * providing essential helper functions missing from native JavaScript.
+ * 
+ * @author OrssiMp
+ * @version 1.0.0
+ * @license ISC
+ */
+
+// Import all modules
 const is = require("./modules/is");
 const has = require("./modules/has");
 const json = require("./modules/json");
 
-// Exporter toutes les méthodes directement
+/**
+ * Main jlang library object containing all utility functions
+ * @namespace jlang
+ */
+
+// Export all methods directly
 module.exports = {
-  // Méthodes is
+  // is module methods
   ...is,
   
-  // Méthodes has
+  // has module methods
   ...has,
   
-  // Méthodes json
+  // json module methods
   ...json,
   
-  // Exporter aussi les espaces de noms complets
+  // Export complete namespaces as well
   is,
   has,
   json

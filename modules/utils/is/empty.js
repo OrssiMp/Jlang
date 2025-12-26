@@ -1,24 +1,37 @@
 /**
- * Vérifie si une valeur est vide
- * @param {*} value - La valeur à vérifier
- * @returns {boolean} true si la valeur est vide, null ou undefined
+ * Check if a value is empty (null, undefined, empty string/array/object)
+ * 
+ * @function isEmpty
+ * @param {*} value - The value to check
+ * @returns {boolean} true if the value is empty, null or undefined
+ * 
+ * @example
+ * isEmpty(null) //
+ * isEmpty(undefined) // true
+ * isEmpty('') // true
+ * isEmpty([]) // true
+ * isEmpty({}) // true
+ * isEmpty(0) // false
+ * isEmpty(false) // false
+ * isEmpty('hello') // false
+ * you can use that whith "is" is.isEmpty()
  */
 module.exports = function isEmpty(value) {
-    // Vérifie si la valeur est null ou undefined
+    // Check if value is null or undefined
     if (value == null) {
         return true;
     }
 
-    // Vérifie les tableaux et les chaînes vides
+    // Check empty arrays and strings
     if (Array.isArray(value) || typeof value === 'string') {
         return value.length === 0;
     }
 
-    // Vérifie les objets vides
+    // Check empty objects
     if (typeof value === 'object') {
         return Object.keys(value).length === 0;
     }
 
-    // Pour les autres types (nombres, booléens, etc.)
+    // For other types (numbers, booleans, etc.)
     return false;
 };

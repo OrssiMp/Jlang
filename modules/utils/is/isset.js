@@ -1,45 +1,54 @@
 /**
- * Vérifie si une variable/propriété est définie et non null
- * Similaire à la fonction isset() de PHP
- * @param {Object|Array} target - L'objet ou le tableau à vérifier
- * @param {...string|number} path - Chemin de la propriété (optionnel)
- * @returns {boolean} true si la valeur est définie et non null
+ * Check if a variable/property is defined and not null
+ * Similar to PHP's isset() function
+ * 
+ * @function isset
+ * @param {Object|Array|*} target - The object or array to check
+ * @param {...string|number} path - Optional property path for nested checking
+ * @returns {boolean} true if the value is defined and not null
+ * 
  * @example
- * // Utilisation simple
+ * // Simple usage
  * isset(variable)
  * 
- * // Vérification de propriété d'objet
+ * // Object property checking
  * isset(obj, 'prop1', 'prop2')
  * 
- * // Vérification d'index de tableau
+ * // Array index checking
  * isset(arr, 0)
+ * 
+ * @example
+ * const user = { profile: { name: 'John' } };
+ * isset(user, 'profile', 'name') // true
+ * isset(user, 'profile', 'age') // false
+ * isset(user, 'profile', 'address', 'street') // false
  */
 function isset(target, ...path) {
-    // Si pas de chemin, vérifie simplement la valeur
+    // If no path provided, simply check the value
     if (path.length === 0) {
         return target !== undefined && target !== null;
     }
     
-    // Si le premier argument est null/undefined, retourne false
+    // If first argument is null/undefined, return false
     if (target == null) {
         return false;
     }
     
-    // Parcourt le chemin pour vérifier chaque niveau
+    // Traverse the path to check each level
     let current = target;
     for (const key of path) {
         if (current == null || typeof current !== 'object') {
             return false;
         }
         
-        // Vérifie si la clé existe dans l'objet/tableau
+        // Check if key exists in object/array
         if (!(key in Object(current))) {
             return false;
         }
         
         current = current[key];
         
-        // Si on atteint une valeur null/undefined avant la fin du chemin
+        // If we reach null/undefined before end of path
         if (current === null || current === undefined) {
             return false;
         }

@@ -1,21 +1,34 @@
 /**
- * Vérifie si une valeur est un tableau
- * @param {*} value - La valeur à tester
- * @param {boolean} [allowEmpty=true] - Si false, vérifie également que le tableau n'est pas vide
- * @returns {boolean} true si la valeur est un tableau (et non vide si allowEmpty est à false)
- * @example
- * // Retourne true
- * isArray([1, 2, 3])
- * isArray([])
+ * Check if a value is an array
  * 
- * // Avec allowEmpty à false
- * isArray([1, 2, 3], false) // true
- * isArray([], false)         // false
+ * @function isArray
+ * @param {*} value - The value to test
+ * @param {boolean} [allowEmpty=true] - If false, also checks that the array is not empty
+ * @returns {boolean} true if the value is an array (and not empty if allowEmpty is false)
+ * 
+ * @example
+ * // Basic array checking
+ * isArray([1, 2, 3])           // true
+ * isArray([])                  // true
+ * isArray(new Array())         // true
+ * 
+ * @example
+ * // With allowEmpty set to false
+ * isArray([1, 2, 3], false)   // true
+ * isArray([], false)           // false
+ * 
+ * @example
+ * // Non-array values
+ * isArray('string')            // false
+ * isArray({})                  // false
+ * isArray(null)                // false
+ * isArray(undefined)           // false
+ * isArray(123)                 // false
+ * isArray(() => {})            // false
  */
 module.exports = function isArray(value, allowEmpty = true) {
     if (!Array.isArray(value)) {
         return false;
     }
     return allowEmpty ? true : value.length > 0;
-    
 };

@@ -1,14 +1,25 @@
 /**
- * Liste toutes les fonctions disponibles dans un module
- * @param {Object} module - Le module à analyser
- * @returns {string[]} Tableau des noms de fonctions
+ * List all available functions in a module
+ * 
+ * @function listFunctions
+ * @param {Object} module - The module to analyze
+ * @returns {string[]} Array of function names
+ * 
  * @example
  * const myModule = {
  *   func1: () => {},
  *   func2: function() {},
  *   prop: 'value'
  * };
- * listFunctions(myModule); // Retourne: ['func1', 'func2']
+ * listFunctions(myModule); // Returns: ['func1', 'func2']
+ * 
+ * @example
+ * const utils = {
+ *   add: (a, b) => a + b,
+ *   subtract: (a, b) => a - b,
+ *   constant: 42
+ * };
+ * listFunctions(utils); // Returns: ['add', 'subtract']
  */
 function listFunctions(module) {
     if (!module || typeof module !== 'object') {

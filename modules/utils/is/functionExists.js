@@ -1,16 +1,27 @@
 /**
- * Vérifie si une fonction avec le nom spécifié existe dans la portée globale
- * @param {string} functionName - Le nom de la fonction à vérifier
- * @returns {boolean} true si une fonction avec ce nom existe, false sinon
+ * Check if a function with the specified name exists in the global scope
+ * 
+ * @function functionExists
+ * @param {string} functionName - The name of the function to check
+ * @returns {boolean} true if a function with this name exists, false otherwise
+ * 
  * @example
- * // Dans le scope global
+ * // Define a function in global scope
  * function maFonction() {}
  * 
  * // Tests
- * functionExists('maFonction')  // true
- * functionExists('fonctionInexistante')  // false
- * functionExists('String')  // false (constructeur, pas une fonction utilisateur)
- * functionExists('setTimeout')  // true (fonction native)
+ * functionExists('maFonction')           // true
+ * functionExists('fonctionInexistante')   // false
+ * functionExists('String')               // false (constructor, not a user function)
+ * functionExists('setTimeout')           // true (native function)
+ * functionExists('console.log')          // true
+ * functionExists('Array')                // false (constructor)
+ * 
+ * @example
+ * // Invalid inputs
+ * functionExists(123)                    // false
+ * functionExists(null)                   // false
+ * functionExists({})                     // false
  */
 module.exports = function functionExists(functionName) {
     if (typeof functionName !== 'string') {
