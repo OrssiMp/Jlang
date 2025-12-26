@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /**
  * is module - Type checking and validation utilities
  * Provides functions to check variable types and values, inspired by PHP's type checking functions
@@ -15,17 +14,7 @@
  * @requires ./utils/is/json
  * @requires ../toPascalCase
  */
-=======
-const array = require("../utils/is/array");
-const empty = require("../utils/is/empty");
-const object = require("../utils/is/object");
-const isset = require("../utils/is/isset");
-const defined = require("../utils/is/defined");
-const alpha = require("../utils/is/alpha");
-const isFunction = require("../utils/is/function");
-const functionExists = require("../utils/is/functionExists");
-const isJson = require("../utils/is/json");
->>>>>>> origin/main
+
 
 const array = require("./utils/is/array");
 const empty = require("./utils/is/empty");
@@ -169,7 +158,7 @@ module.exports = {
      * @returns {boolean} True if function exists
      */
     functionExists,
-<<<<<<< HEAD
+
     
     /**
      * Alias for functionExists
@@ -194,12 +183,7 @@ module.exports = {
      * @param {string} str - String to check
      * @returns {boolean} True if string is valid JSON
      */
-=======
-    isFunctionExists: functionExists,
-    
-    // Fonctions JSON
-    json: isJson,
->>>>>>> origin/main
+
     isJson
 };
 
