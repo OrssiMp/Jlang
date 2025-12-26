@@ -1,4 +1,3 @@
-
 const {
   isAlpha,
   isFunction,
@@ -8,9 +7,9 @@ const {
   isObject,
   isset,
   isDefined,
- defined,
+  defined,
   isJson,
-  toJson
+  toJson,
 } = require("./index");
 const listFunctions = require("./modules/listFunctions");
 
@@ -144,38 +143,42 @@ console.log(isAlpha("123")); // false
 
 // Tests pour isJson
 console.log("\n=== Tests pour isJson ===");
-console.log("JSON valide (objet):", isJson('{"name":"John", "age":30}'));  // true
-console.log("JSON valide (tableau):", isJson('[1, 2, 3]'));               // true
-console.log("JSON valide (chaîne):", isJson('"simple string"'));          // true
-console.log("JSON invalide (chaîne simple):", isJson('not json'));        // false
+console.log("JSON valide (objet):", isJson('{"name":"John", "age":30}')); // true
+console.log("JSON valide (tableau):", isJson("[1, 2, 3]")); // true
+console.log("JSON valide (chaîne):", isJson('"simple string"')); // true
+console.log("JSON invalide (chaîne simple):", isJson("not json")); // false
 console.log("JSON invalide (accolade manquante):", isJson('{"name":"John"')); // false
-console.log("Chaîne vide:", isJson(''));                                  // false
-console.log("null:", isJson(null));                                      // false
-console.log("Objet JavaScript:", isJson({name: "John"}));                // false (doit être une chaîne)
+console.log("Chaîne vide:", isJson("")); // false
+console.log("null:", isJson(null)); // false
+console.log("Objet JavaScript:", isJson({ name: "John" })); // false (doit être une chaîne)
 
 // Tests pour toJson
 console.log("\n=== Tests pour toJson ===");
-console.log("Objet simple:", toJson({name: "John", age: 30}));
+console.log("Objet simple:", toJson({ name: "John", age: 30 }));
 console.log("Tableau:", toJson([1, 2, 3]));
 console.log("Chaîne simple:", toJson("{Hello World}"));
 console.log("Nombre:", toJson(42));
 console.log("Booléen:", toJson(true));
 console.log("Null:", toJson(null));
-console.log("Objet complexe:", toJson({
-  name: "John",
-  age: 30,
-  address: {
-    city: "Paris",
-    country: "France"
-  },
-  hobbies: ["reading", "coding", "music"]
-}));
+console.log(
+  "Objet complexe:",
+  toJson({
+    name: "John",
+    age: 30,
+    address: {
+      city: "Paris",
+      country: "France",
+    },
+    hobbies: ["reading", "coding", "music"],
+  })
+);
 
 // Tests pour la conversion JSON bidirectionnelle avec toJson
 console.log("\n=== Tests pour toJson (sérialisation/désérialisation) ===");
 
 // 1. Test de désérialisation d'un objet
-const jsonString = '{"name":"John","age":30,"isActive":true,"hobbies":["reading","coding"],"address":{"city":"Paris"}}';
+const jsonString =
+  '{"name":"John","age":30,"isActive":true,"hobbies":["reading","coding"],"address":{"city":"Paris"}}';
 const parsedObj = toJson(jsonString);
 console.log("Type du résultat:", typeof parsedObj);
 console.log("Nom:", parsedObj.name);
@@ -191,11 +194,19 @@ console.log("\nTableau parsé:", toJson(jsonArray));
 // 3. Test avec fonction de transformation (reviver)
 const withDate = '{"date":"2025-12-18T20:30:00.000Z"}';
 const withDateRevived = toJson(withDate, (key, value) => {
-  if (key === 'date') return new Date(value);
+  if (key === "date") return new Date(value);
   return value;
 });
-console.log("\nAvec date (sans reviver):", toJson(withDate).date, typeof toJson(withDate).date);
-console.log("Avec date (avec reviver):", withDateRevived.date, typeof withDateRevived.date);
+console.log(
+  "\nAvec date (sans reviver):",
+  toJson(withDate).date,
+  typeof toJson(withDate).date
+);
+console.log(
+  "Avec date (avec reviver):",
+  withDateRevived.date,
+  typeof withDateRevived.date
+);
 
 // 4. Test de sérialisation avec formatage
 console.log("\nSérialisation avec formatage:");
@@ -204,7 +215,7 @@ console.log(toJson(parsedObj, null, 2));
 // 5. Test de gestion d'erreur
 try {
   console.log("\nTest d'erreur avec JSON invalide:");
-  console.log(toJson('{invalid json}'));
+  console.log(toJson("{invalid json}"));
 } catch (error) {
   console.log("Erreur capturée:", error.message);
 }
@@ -216,28 +227,27 @@ const complexObj = {
   isActive: true,
   address: {
     city: "Paris",
-    country: "France"
+    country: "France",
   },
   hobbies: ["reading", "coding"],
   birthDate: new Date(1990, 0, 1),
-  toJSON: function() {
+  toJSON: function () {
     return {
       ...this,
       age: this.age,
-      birthYear: this.birthDate.getFullYear()
+      birthYear: this.birthDate.getFullYear(),
     };
-  }
+  },
 };
 
 console.log("\nSérialisation d'objet avec toJSON personnalisé:");
 console.log(toJson(complexObj, null, 2));
 
 const utils = {
-    add: (a, b) => a + b,
-   subtract: (a, b) => a - b,
-   constant: 42
-  };
+  add: (a, b) => a + b,
+  subtract: (a, b) => a - b,
+  constant: 42,
+};
 
 console.log(listFunctions(utils));
-console.log(!isArray(utils) , isObject(utils));
-
+console.log(!isArray(utils), isObject(utils));
