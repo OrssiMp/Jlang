@@ -2,9 +2,20 @@
   "name": "jlang",
   "version": "1.0.0",
   "description": "jlang - A modern JavaScript utility library inspired by PHP, Python, providing handy functions like isset(), isArray(), and other missing utilities in native JavaScript.",
-  "main": "index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.cjs"
+    }
+  },
   "scripts": {
-    "test": "node ./.ignore/test.js"
+    "test": "node ./.ignore/test.js",
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -13,7 +24,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "rollup": "^3.0.0"
+  },
   "bugs": {
     "url": "https://github.com/OrssiMp/Jlang/issues"
   },

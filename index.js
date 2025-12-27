@@ -12,6 +12,10 @@
 const is = require("./modules/is");
 const has = require("./modules/has");
 const json = require("./modules/json");
+const  sum = require("./modules/sum");
+const  toPascalCase = require("./modules/toPascalCase");
+const  len = require("./modules/len");
+const listFunctions = require("./modules/listFunctions")
 
 /**
  * Main jlang library object containing all utility functions
@@ -32,5 +36,10 @@ module.exports = {
   // Export complete namespaces as well
   is,
   has,
-  json
+  json,
+  sum,
+  len,
+  toPascalCase,
+  listFunctions,
+
 };

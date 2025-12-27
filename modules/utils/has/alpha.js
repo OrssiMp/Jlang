@@ -12,6 +12,6 @@
  * alpha('!@#$') // false
  */
 module.exports = function alpha(value) {
-    return /[a-zA-Z]/.test(value);
+    return /[\p{L}\p{M}]/u.test(value);
 }
     

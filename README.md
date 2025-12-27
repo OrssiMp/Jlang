@@ -9,6 +9,29 @@ A modern JavaScript utility library inspired by PHP and Python, providing essent
 - **PHP-inspired** — Familiar functions you already know and love  
 - **Modular design** — Import only what you need  
 - **Multiple naming conventions** — Both camelCase and PascalCase variants available
+## Utilities
+
+import jlang from './index.js';
+//
+const jlang = require("jlang")
+
+console.log(jlang.listFunctions(jlang));
+
+[
+  'array',            'isArray',
+  'empty',            'isEmpty',
+  'object',           'isObject',
+  'isset',            'defined',
+  'isDefined',        'alpha',
+  'isAlpha',          'function',
+  'isFunction',       'functionExists',
+  'isFunctionExists', 'isJson',
+  'hasAlpha',         'toJson',
+  'fromJson',         'stringify',
+  'parse',            'sum',
+  'len',              'toPascalCase',
+  'listFunctions'
+]
 
 ## Installation
 
