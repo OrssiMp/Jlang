@@ -11,6 +11,7 @@ ignore/
 index.mjs
 test.mjs
 test.js
+dist/
 
 # Module directories
 modules/cjs/
