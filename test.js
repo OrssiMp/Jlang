@@ -1,3 +1,4 @@
+const jlang = require("./index");
 const {
   isAlpha,
   isFunction,
@@ -9,9 +10,8 @@ const {
   isDefined,
   defined,
   isJson,
-  toJson,
+  toJson,listFunctions
 } = require("./index");
-const listFunctions = require("./modules/listFunctions");
 
 // Tests
 const testValues = [
@@ -249,5 +249,5 @@ const utils = {
   constant: 42,
 };
 
-console.log(listFunctions(utils));
+console.log(listFunctions(jlang));
 console.log(!isArray(utils), isObject(utils));

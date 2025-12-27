@@ -2,3 +2,12 @@
 .gitignore
 id.md
 test.js
+
+# ES6 modules
+*.mjs
+index.mjs
+test.mjs
+
+# Module directories
+modules/cjs/
+modules/mjs/
