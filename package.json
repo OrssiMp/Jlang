@@ -12,10 +12,9 @@
     }
   },
   "scripts": {
-    "test": "node ./.ignore/test.js",
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "prepublishOnly": "npm run build"
+    "test": "echo you can create your own test",
+    "prepublish": "git commit -am \"prepublish\""
+
   },
   "repository": {
     "type": "git",

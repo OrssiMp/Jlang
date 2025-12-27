@@ -12,10 +12,12 @@
 const is = require("./modules/is");
 const has = require("./modules/has");
 const json = require("./modules/json");
-const  sum = require("./modules/sum");
-const  toPascalCase = require("./modules/toPascalCase");
-const  len = require("./modules/len");
-const listFunctions = require("./modules/listFunctions")
+const sum = require("./modules/sum");
+const len = require("./modules/len");
+const listFunctions = require("./modules/listFunctions");
+const toPascalCase = require("./modules/toPascalCase");
+
+
 
 /**
  * Main jlang library object containing all utility functions
@@ -41,5 +43,6 @@ module.exports = {
   len,
   toPascalCase,
   listFunctions,
+
 
 };

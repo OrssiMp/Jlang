@@ -3,4 +3,16 @@ debug_exports.js
 node_modules
 *.md
 !README.md
-**/.ignore/
+
+ignore/
+
+# ES6 modules
+*.mjs
+index.mjs
+test.mjs
+test.js
+
+# Module directories
+modules/cjs/
+modules/mjs/
+
