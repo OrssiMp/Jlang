@@ -4,3 +4,6 @@ node_modules
 *.md
 !README.md
 ignore/
+*.mjs
+index.mjs
+test.mjs

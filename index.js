@@ -32,5 +32,6 @@ module.exports = {
   // Export complete namespaces as well
   is,
   has,
-  json
+  json,
+  sum
 };
