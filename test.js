@@ -1,5 +1,6 @@
 
 // const jlang = require("./index");
+const jlang = require("./index");
 const {
   isAlpha,
   isFunction,
@@ -16,6 +17,7 @@ const {
   sum
 } = require("./index");
 const len = require("./modules/len");
+const is = require("./modules/is")
 
 // // 1. Tests basiques
 // console.log("1. Tests basiques:");
@@ -229,7 +231,7 @@ console.log("Objet original:", complexObj);
 console.log("complexObj.toJson():", complexObj.toJSON());
 
 // Pour voir la version JSON:
-console.log("Version JSON:", toJson(complexObj, null, 2));
+console.log("Version JSON:",is.isAlpha, toJson(complexObj, null, 2));
 
 // const utils = {
 //   add: (a, b) => a + b,
@@ -243,23 +245,3 @@ console.log("Version JSON:", toJson(complexObj, null, 2));
 // Check if variable exists (like PHP's isset)
 
 
-// Check if value is empty
-if (isEmpty("data")) {
-  console.log('Data is empty');
-}
-let myList =[1,2,[1,4,5,[toJson,isset,fromJson],sum([4,5,8,9]),len([sum([4,5,6]),5])]]
-// Check if value is an array
-if (isArray(myList)) {
-  console.log('It\'s an array!');
-}
-let userInput = myList
-let data =userInput
-// JSON utilities
-const jsonString = toJson({ name: 'John' });
-const parsed = fromJson(jsonString);
-
-if (isset(userInput) && isArray(data)) {
-  console.log('Valid array:', data);
-}else{
-    throw new Error("data ")
-}
