@@ -1,5 +1,5 @@
 *.php
-
+*.txt
 debug_exports.js
 node_modules
 *.md
