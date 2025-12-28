@@ -1,7 +1,8 @@
 .ignore/
 .gitignore
 id.md
-
+*.txt
+*.php
 test.js
 
 # ES6 modules

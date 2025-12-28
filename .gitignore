@@ -1,4 +1,5 @@
 *.php
+*.txt
 debug_exports.js
 node_modules
 *.md
@@ -10,7 +11,7 @@ ignore/
 *.mjs
 index.mjs
 test.mjs
-test.js
+./test.js
 dist/
 
 # Module directories

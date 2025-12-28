@@ -2,32 +2,45 @@
   "name": "jlang",
   "version": "1.0.1",
   "description": "jlang - A modern JavaScript utility library inspired by PHP, Python, providing handy functions like isset(), isArray(), and other missing utilities in native JavaScript.",
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
+  "main": "index.js",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs",
-      "default": "./dist/index.cjs"
+      "require": "./index.js",
+      "default": "./index.js"
     }
   },
   "scripts": {
-    "test": "echo you can create your own test",
-    "prepublish": "git commit -am \"prepublish\""
-
+    "test": "node test.js",
+    "test:watch": "node --watch test.js",
+    "lint": "echo 'Linting not configured yet'",
+    "lint:fix": "echo 'Linting not configured yet'",
+    "build": "npm run lint && npm test",
+    "prepublishOnly": "npm run build",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OrssiMp/Jlang.git"
   },
-  "keywords": [],
-  "author": "",
+   "keywords": [
+    "javascript",
+    "utilities",
+    "php",
+    "python",
+    "helper",
+    "validation",
+    "isset",
+    "isarray",
+    "isempty"
+  ],
+   "author": {
+    "name": "orssi_mp",
+    "email": "orssimpiere5@gmail.com",
+    "url": "https://github.com/OrssiMp"
+  },
   "license": "ISC",
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.0",
-    "@rollup/plugin-json": "^6.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.0",
-    "rollup": "^3.0.0"
+  "engines": {
+    "node": ">=14.0.0"
   },
   "bugs": {
     "url": "https://github.com/OrssiMp/Jlang/issues"
